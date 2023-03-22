@@ -2,9 +2,9 @@
 <ul>
 <% @categories.each do |category| %>
   <li>
-  <h3><%= category.user.full_name%><h3>
+  <h3><%= category.name%><h3>
   <img src=<%=category.icon%> alt=''>
-  <h4>Total transaction: </h4>
+  <h4><%= render partial: "deals/total", locals: { deals: category.deals } %></h4>
   </li>
 <% end %>
 </ul>

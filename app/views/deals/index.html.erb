@@ -1,7 +1,4 @@
-<% @deals.each do |deal| %>
-  <%@total = (@total || 0) + deal.amount%>
-<% end %>
-<h1>Total Transactions: $<%= @total%></h1>
+<h1><%= render partial: "total", locals: { deals: @deals } %></h1>
 <ul>
 <% @deals.each do |deal| %>
   <li>
