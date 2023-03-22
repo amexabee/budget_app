@@ -1,0 +1,14 @@
+<% @deals.each do |deal| %>
+  <%@total = (@total || 0) + deal.amount%>
+<% end %>
+<h1>Total Transactions: $<%= @total%></h1>
+<ul>
+<% @deals.each do |deal| %>
+  <li>
+  <h3><%= deal.name%>
+  <h4>Transaction amount: $<%= deal.amount%></h4>
+  </li>
+<% end %>
+</ul>
+<button><%= link_to 'Add new category', new_category_deal_path%></button>
+<button><%= link_to 'Go Back', categories_path%></button>
