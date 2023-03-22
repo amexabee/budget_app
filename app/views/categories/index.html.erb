@@ -9,3 +9,4 @@
 <% end %>
 </ul>
 <button><%= link_to 'Add new category', new_category_path%></button>
+<%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
