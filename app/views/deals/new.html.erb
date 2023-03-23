@@ -1,0 +1,24 @@
+<%= form_with model: @deal, url: group_deals_path do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount, required: true %>
+  </div>
+  <div class="field">
+    <%= form.label :group_ids, 'Groups' %>
+      <%= form.collection_check_boxes :group_ids, Group.all, :id, :name, required: true do |cb| %>
+        <div class="form-check">
+          <%= cb.check_box %>
+          <%= cb.label %>
+        </div>
+      <% end %>
+  </div>
+  <%= form.hidden_field :author_id, value: current_user.id %>
+  <div class="actions">
+    <%= form.submit%>
+  </div>
+<% end %>
+<button><%= link_to 'Go Back', group_deals_path%><button>
