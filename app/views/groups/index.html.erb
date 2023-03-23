@@ -1,0 +1,22 @@
+<%if signed_in? %>
+  <h1>Categories</h1>
+  <ul>
+    <% @groups.each do |group| %>
+      <li>
+        <h3><%= group.name%><h3>
+        <img src=<%=group.icon%> alt=''>
+        <%@deals = []%>
+        <%group.group_deals.each do |group_deal|%>
+          <%@deals << group_deal.deal%>
+        <%end%>
+        <h4><%= render partial: "deals/total", locals: { deals: @deals } %></h4>
+      </li>
+    <% end %>
+  </ul>
+  <button><%= link_to 'Add new group', new_group_path%></button>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+<%else%>
+  <h1>Easydeals</h1>
+  <%= link_to 'LOG IN', new_user_session_path %> <br/> <br/>
+  <%= link_to 'SIGN UP', new_user_registration_path %>
+<%end%>
