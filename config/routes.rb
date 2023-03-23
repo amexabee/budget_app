@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:index, :new, :create] do
+  resources :groups, only: [:index, :new, :create] do
     resources :deals, only: [:index, :new, :create]
   end
   devise_for :users
