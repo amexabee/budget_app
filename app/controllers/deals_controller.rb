@@ -15,8 +15,8 @@ class DealsController < ApplicationController
     if group_ids_present?
       @deal = Deal.new(deal_params.except(:group_ids))
       if @deal.save
-        params[:deal][:group_ids].each do |group_id|
-          @group_deal = GroupDeal.create(group_id: group_id, deal_id: @deal.id)
+        params[:deal][:group_ids].each do |id|
+          @group_deal = GroupDeal.create(group_id: id, deal_id: @deal.id)
         end
         redirect_to group_deals_path
       else
@@ -24,7 +24,7 @@ class DealsController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     else
-      redirect_to new_group_deal_path, alert: "Please select at least one group"
+      redirect_to new_group_deal_path, alert: 'Please select at least one group'
     end
   end
 
@@ -35,7 +35,7 @@ class DealsController < ApplicationController
   end
 
   def group_ids_present?
-    params[:deal][:group_ids].reject(&:empty?).each do |item| 
+    params[:deal][:group_ids].reject(&:empty?).each do |item|
       return true if Group.find_by(id: item)
     end
     false
