@@ -16,7 +16,11 @@
   <button><%= link_to 'Add new group', new_group_path%></button>
   <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
 <%else%>
-  <h1>Easydeals</h1>
-  <%= link_to 'LOG IN', new_user_session_path %> <br/> <br/>
-  <%= link_to 'SIGN UP', new_user_registration_path %>
+  <div class='intro'>
+    <h1>Easydeals</h1>
+    <div>
+    <button class='login'><%= link_to 'LOG IN', new_user_session_path %></button>
+    <button><%= link_to 'SIGN UP', new_user_registration_path %></button>
+    <div>
+  </div>
 <%end%>

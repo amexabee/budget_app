@@ -14,11 +14,49 @@
  *= require_self
  */
 
-h1 {
-  font-family: 'Dancing Script', cursive;
-}
-
 * {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
+  margin: 0;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.intro h1 {
+  margin-top: 50vh;
+  justify-self: center;
+  font-size: 10vh;
+  font-family: 'Dancing Script', cursive;
+}
+
+.intro div {
+  width: 90vw;
+}
+
+.intro button {
+  width: 88vw;
+  height: 50px;
+  background-color: inherit;
+  border: none;
+}
+
+.login {
+  background-color: #377ec2 !important;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .intro h1 {
+    margin-top: 25vh;
+  }
 }
