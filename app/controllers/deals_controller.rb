@@ -19,6 +19,7 @@ class DealsController < ApplicationController
           @group_deal = GroupDeal.create(group_id: id, deal_id: @deal.id)
         end
         redirect_to group_deals_path
+        flash.discard(:alert)
       else
         flash[:alert] = @deal.errors.full_messages.first if @deal.errors.any?
         render :new, status: :unprocessable_entity
