@@ -1,7 +1,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 <div class='login-form'>
-  <%= render partial: "devise/shared/header", locals: { form: f, label: 'REGISTER', action: 'Next' } %>
+  <%= render partial: "devise/shared/header", locals: { back: groups_path, label: 'REGISTER', form: f, action: 'Next' } %>
   
   <div class='fields'>
     <div class="field">

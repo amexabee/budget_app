@@ -1,5 +1,5 @@
-<div class='new-group'>
-<%= render partial: "devise/shared/header", locals: { form: nil, label: 'NEW CATEGORY' } %>
+<div class='new'>
+<%= render partial: "devise/shared/header", locals: { back: groups_path, label: 'NEW CATEGORY', form: nil } %>
 <%= form_with(model: [@group], url: groups_path, local: true) do |form| %>
   <div class='fields'>
     <div class="field">

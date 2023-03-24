@@ -1,14 +1,15 @@
-<%= form_with model: @deal, url: group_deals_path do |form| %>
+<div class='new'>
+<%= render partial: "devise/shared/header", locals: { back: group_deals_path, label: 'NEW TRANSACTION', form: nil} %>
+<%= form_with(model: @deal, url: group_deals_path, local: true) do |form| %>
+  <div class='fields'>
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
+    <%= form.text_field :name, placeholder: 'Name', required: true %>
   </div>
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount, step: 0.01 , required: true %>
+    <%= form.number_field :amount, step: 0.01 , placeholder: 'Amount (number only)',required: true %>
   </div>
+  
   <div class="field">
-    <%= form.label :group_ids, 'Groups' %>
       <%= form.collection_check_boxes :group_ids, Group.all, :id, :name, required: true do |cb| %>
         <div class="form-check">
           <%= cb.check_box %>
@@ -16,9 +17,10 @@
         </div>
       <% end %>
   </div>
+  </div>
   <%= form.hidden_field :author_id, value: current_user.id %>
   <div class="actions">
-    <%= form.submit%>
+    <%= form.submit 'PROCESS TRANSACTION'%>
   </div>
 <% end %>
-<button><%= link_to 'Go Back', group_deals_path%></button>
+</div>

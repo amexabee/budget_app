@@ -6,6 +6,7 @@
   </div>
   <div class='card'>
     <% @groups.each do |group| %>
+    <a href="<%= group_deals_url(group) %>">
       <div class='card-body'>
         <img src='https://i.ibb.co/344p5kB/transaction.png' alt='categories'>
         <h4><%= group.name%><h4>
@@ -15,6 +16,7 @@
         <%end%>
         <h5>Total transaction: <%= render partial: "deals/total", locals: { deals: @deals } %></h5>
       </div>
+    </a>  
     <% end %>
   </div>
   <button class='add-group'><%= link_to 'NEW CATEGORY', new_group_path%></button>

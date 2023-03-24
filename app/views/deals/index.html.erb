@@ -1,5 +1,5 @@
 <div class='deals'>
-<%= render partial: "devise/shared/header", locals: { form: nil, label: 'TRANSACTIONS' } %>
+<%= render partial: "devise/shared/header", locals: { back: groups_path, label: 'TRANSACTIONS', form: nil } %>
 <div class='total'>
 <span>Total</span><span><%= render partial: "total", locals: { deals: @deals } %></span>
 </div>
