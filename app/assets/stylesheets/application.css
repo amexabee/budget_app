@@ -33,7 +33,7 @@ body {
 }
 
 .intro h1 {
-  margin-top: 50vh;
+  margin-top: 40vh;
   justify-self: center;
   font-size: 10vh;
   font-family: 'Dancing Script', cursive;
@@ -62,12 +62,13 @@ a {
 .back :first-child {
   font-size: 30px;
   padding: 5px;
+  color: #fff;
 }
 
 .back span {
   position: relative;
   top: -6px;
-  left: -18px;
+  left: -21px;
   font-weight: bold;
 }
 
@@ -82,12 +83,14 @@ a {
 
 .login-header > * {
   margin-top: 15px;
+  color: #fff;
 }
 
 .login-header .actions > * {
   background-color: inherit;
   border: none;
   cursor: pointer;
+  color: #fff;
 }
 
 .login-fields {
@@ -126,6 +129,6 @@ a {
 
 @media (min-width: 768px) {
   .intro h1 {
-    margin-top: 25vh;
+    margin-top: 20vh;
   }
 }
