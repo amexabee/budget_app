@@ -105,15 +105,20 @@ a {
   border: none;
   background-color: inherit;
   padding: 10px 0;
+  width: 50%;
 }
 
 .login-fields .field:nth-child(n) :focus {
   outline: none;
 }
 
-.login-fields .field:first-child {
+.login-fields .field {
   border-bottom: 1px solid #ccc;
   outline: none;
+}
+
+.login-fields .field:last-child {
+  border: none;
 }
 
 .login-form {
