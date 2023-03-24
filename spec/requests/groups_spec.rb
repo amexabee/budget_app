@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GroupsController , type: :request do
+RSpec.describe GroupsController, type: :request do
   describe 'Goes to the corect route' do
     describe 'GET /groups' do
       it 'returns http success' do

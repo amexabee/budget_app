@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DealsController , type: :request do
+RSpec.describe DealsController, type: :request do
   describe 'Goes to the corect route' do
     before do
       @user = User.create!(full_name: 'Amanuel', email: 'b@1', password: '123456')
