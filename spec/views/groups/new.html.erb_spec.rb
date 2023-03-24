@@ -4,7 +4,7 @@ RSpec.describe 'Group new test', type: :feature do
   describe 'when user is signed in' do
     include Devise::Test::IntegrationHelpers
 
-    before :each do 
+    before :each do
       @user = User.create(full_name: 'Amanuel', email: 'c@2', password: '123456')
       visit new_user_session_path
       sign_in @user
@@ -23,7 +23,7 @@ RSpec.describe 'Group new test', type: :feature do
 
     it 'should display the icon field' do
       expect(page).to have_css('input[placeholder="Icon"]')
-    end 
+    end
 
     it 'should display a button to create category' do
       expect(page).to have_button('CREATE CATEGORY')

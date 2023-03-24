@@ -4,7 +4,7 @@ RSpec.describe 'Group index test', type: :feature do
   describe 'when user is signed in' do
     include Devise::Test::IntegrationHelpers
 
-    before :each do 
+    before :each do
       @user = User.create(full_name: 'Amanuel', email: 'c@1', password: '123456')
       visit new_user_session_path
       sign_in @user
@@ -23,11 +23,11 @@ RSpec.describe 'Group index test', type: :feature do
 
     it 'should display the category name' do
       expect(page).to have_content(@group.name)
-    end 
+    end
 
     it 'should display the total transaction' do
       expect(page).to have_content('Total transaction: $0')
-    end 
+    end
 
     it 'should display a new category button' do
       expect(page).to have_content('NEW CATEGORY')

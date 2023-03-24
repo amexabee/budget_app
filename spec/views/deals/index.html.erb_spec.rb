@@ -4,7 +4,7 @@ RSpec.describe 'Deal index test', type: :feature do
   describe 'when user is signed in' do
     include Devise::Test::IntegrationHelpers
 
-    before :each do 
+    before :each do
       @user = User.create(full_name: 'Amanuel', email: 'c@3', password: '123456')
       visit new_user_session_path
       sign_in @user
@@ -19,7 +19,7 @@ RSpec.describe 'Deal index test', type: :feature do
 
     it 'should display total' do
       expect(page).to have_content('Total')
-    end 
+    end
 
     it 'should display the total transaction' do
       expect(page).to have_content('$0')
