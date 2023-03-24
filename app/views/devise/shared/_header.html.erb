@@ -1,7 +1,9 @@
 <div class='header'>
   <div class='back'>
-    <%= link_to '<', back %>
-    <span>—</span>
+    <%= link_to back do%>
+      <%='<'%>
+      <span>—</span>
+    <%end%>
   </div>
   <h4><%= label%></h4>
   <% unless form.nil? %>

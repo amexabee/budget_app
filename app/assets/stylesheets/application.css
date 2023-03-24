@@ -64,16 +64,16 @@ a {
 }
 
 .back :first-child {
-  font-size: 30px;
+  font-size: 40px;
   padding: 5px;
   color: #fff;
 }
 
 .back span {
   position: relative;
-  top: -6px;
-  left: -21px;
-  font-weight: bold;
+  top: -7px;
+  left: -32px;
+  font-size: 25px !important;
 }
 
 .header {
@@ -87,14 +87,6 @@ a {
 
 .header > * {
   margin-top: 15px;
-  color: #fff;
-}
-
-.header .actions > *,
-.sign-out {
-  background-color: inherit;
-  border: none;
-  cursor: pointer;
   color: #fff;
 }
 
@@ -145,11 +137,6 @@ a {
   overflow: auto;
 }
 
-.deals .header h4,
-.new .header h4 {
-  margin-right: 30vw;
-}
-
 .deals .total {
   background-color: #fff;
   margin-bottom: 10px;
@@ -167,10 +154,6 @@ a {
   margin-top: 10px;
 }
 
-.group .card-body {
-  border: 1px solid #377ec2;
-}
-
 .card-body {
   background-color: #fff;
   margin: 0 3vw 10px;
@@ -178,6 +161,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.group .card-body {
+  border: 1px solid #377ec2;
 }
 
 .card-body img {
@@ -193,6 +180,11 @@ a {
   font-weight: 600;
 }
 
+.deals .header h4,
+.new .header h4 {
+  margin-right: 30vw;
+}
+
 .deals button,
 .add-group {
   height: 75px;
@@ -203,11 +195,19 @@ a {
   width: 100vw;
 }
 
-.deals button > *,
-.add-group > * {
+.add-group > *,
+.deals button > * {
   color: #fff;
   border: 1px solid #fff;
   padding: 10px 18vw;
+}
+
+.header .actions > *,
+.sign-out {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  color: #fff;
 }
 
 .new .actions {
