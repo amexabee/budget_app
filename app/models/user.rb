@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :full_name, presence: true
 
   has_many :groups, class_name: 'Group', foreign_key: :user_id
+  has_many :deals, class_name: 'Deal', foreign_key: :author_id
 end
