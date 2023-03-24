@@ -54,6 +54,10 @@ body {
   background-color: #377ec2 !important;
 }
 
+.login > * {
+  color: #fff;
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -94,7 +98,7 @@ a {
   color: #fff;
 }
 
-.login-fields {
+.fields {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -102,23 +106,23 @@ a {
   background-color: #fff;
 }
 
-.login-fields .field > * {
+.field > * {
   border: none;
   background-color: inherit;
   padding: 10px 0;
   width: 50%;
 }
 
-.login-fields .field:nth-child(n) :focus {
+.field:nth-child(n) :focus {
   outline: none;
 }
 
-.login-fields .field {
+.field {
   border-bottom: 1px solid #ccc;
   outline: none;
 }
 
-.login-fields .field:last-child {
+.field:last-child {
   border: none;
 }
 
@@ -141,7 +145,8 @@ a {
   overflow: auto;
 }
 
-.deals .header h4 {
+.deals .header h4,
+.new-group .header h4 {
   margin-right: 30vw;
 }
 
@@ -181,7 +186,7 @@ a {
 }
 
 .deals button,
-.new-group {
+.add-group {
   height: 75px;
   background-color: #5fb523;
   border: none;
@@ -191,10 +196,26 @@ a {
 }
 
 .deals button > *,
-.new-group > * {
+.add-group > * {
   color: #fff;
   border: 1px solid #fff;
   padding: 10px 18vw;
+}
+
+.new-group .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  height: 45px;
+}
+
+.new-group .actions > * {
+  background-color: #5fb523;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -202,7 +223,8 @@ a {
     margin-top: 20vh;
   }
 
-  .deals .header h4 {
+  .deals .header h4,
+  .new-group .header h4 {
     margin-right: 45vw;
   }
 }

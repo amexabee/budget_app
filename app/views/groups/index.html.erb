@@ -17,14 +17,14 @@
       </div>
     <% end %>
   </div>
-  <button class='new-group'><%= link_to 'NEW CATEGORY', new_group_path%></button>
+  <button class='add-group'><%= link_to 'NEW CATEGORY', new_group_path%></button>
 </div>
 <%else%>
   <div class='intro'>
     <h1>Easydeals</h1>
     <div>
-    <button class='login'><%= link_to 'LOG IN', new_user_session_path %></button>
-    <button><%= link_to 'SIGN UP', new_user_registration_path %></button>
+      <button class='login'><%= link_to 'LOG IN', new_user_session_path %></button>
+      <button><%= link_to 'SIGN UP', new_user_registration_path %></button>
     <div>
   </div>
 <%end%>

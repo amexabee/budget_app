@@ -1,15 +1,17 @@
+<div class='new-group'>
+<%= render partial: "devise/shared/header", locals: { form: nil, label: 'NEW CATEGORY' } %>
 <%= form_with(model: [@group], url: groups_path, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
-  </div>
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon, required: true %>
+  <div class='fields'>
+    <div class="field">
+      <%= form.text_field :name, placeholder: 'Name', required: true %>
+    </div>
+    <div class="field">
+      <%= form.text_field :icon, placeholder: 'Icon', required: true %>
+    </div>
   </div>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'CREATE CATEGORY'%>
   </div>
 <% end %>
-<%= link_to 'Go Back', groups_path%>
+</div>
