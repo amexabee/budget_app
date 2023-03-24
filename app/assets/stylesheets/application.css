@@ -72,21 +72,21 @@ a {
   font-weight: bold;
 }
 
-.login-header {
+.header {
   padding: 0 10px;
   background-color: #377ec2;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
   height: 50px;
 }
 
-.login-header > * {
+.header > * {
   margin-top: 15px;
   color: #fff;
 }
 
-.login-header .actions > * {
+.header .actions > * {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -132,8 +132,77 @@ a {
   align-self: center;
 }
 
+.deals {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80vh;
+  overflow: auto;
+}
+
+.deals .header h4 {
+  margin-right: 30vw;
+}
+
+.deals .total {
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.deals .total span {
+  margin: 0 3vw;
+  font-weight: bold;
+}
+
+.deals .card .card-body {
+  background-color: #fff;
+  margin: 0 3vw 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deals .card .card-body img {
+  height: 50px;
+}
+
+.card-body h4 {
+  margin-right: 40vw;
+}
+
+.card-body h5 {
+  font-weight: 600;
+}
+
+.deals button {
+  height: 75px;
+  background-color: #5fb523;
+  border: none;
+  position: fixed;
+  top: 90vh;
+  width: 100vw;
+}
+
+.deals button > * {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 18vw;
+}
+
 @media (min-width: 768px) {
   .intro h1 {
     margin-top: 20vh;
+  }
+
+  .deals .header h4 {
+    margin-right: 45vw;
+  }
+
+  .card-body h4 {
+    margin-right: 75vw;
   }
 }
