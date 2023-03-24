@@ -1,22 +1,32 @@
 <%if signed_in? %>
-  <h1>Categories</h1>
-  <ul>
+<div class='group'>
+  <div class='header'>
+    <h4>CATEGORIES</h4>
+    <%= button_to 'Sign out', destroy_user_session_path, class: 'sign-out', method: :delete %>
+  </div>
+  <div class='card'>
     <% @groups.each do |group| %>
-      <li>
-        <h3><%= group.name%><h3>
-        <img src=<%=group.icon%> alt=''>
+    <a href="<%= group_deals_url(group) %>">
+      <div class='card-body'>
+        <img src='https://i.ibb.co/344p5kB/transaction.png' alt='categories'>
+        <h4><%= group.name%><h4>
         <%@deals = []%>
         <%group.group_deals.each do |group_deal|%>
           <%@deals << group_deal.deal%>
         <%end%>
-        <h4><%= render partial: "deals/total", locals: { deals: @deals } %></h4>
-      </li>
+        <h5>Total transaction: <%= render partial: "deals/total", locals: { deals: @deals } %></h5>
+      </div>
+    </a>  
     <% end %>
-  </ul>
-  <button><%= link_to 'Add new group', new_group_path%></button>
-  <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+  </div>
+  <button class='add-group'><%= link_to 'NEW CATEGORY', new_group_path%></button>
+</div>
 <%else%>
-  <h1>Easydeals</h1>
-  <%= link_to 'LOG IN', new_user_session_path %> <br/> <br/>
-  <%= link_to 'SIGN UP', new_user_registration_path %>
+  <div class='intro'>
+    <h1>Easydeals</h1>
+    <div>
+      <button class='login'><%= link_to 'LOG IN', new_user_session_path %></button>
+      <button><%= link_to 'SIGN UP', new_user_registration_path %></button>
+    <div>
+  </div>
 <%end%>
