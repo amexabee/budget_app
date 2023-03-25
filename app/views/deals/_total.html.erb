@@ -1,0 +1,5 @@
+<%@total = 0%>
+<% deals.each do |deal| %>
+  <%@total += deal.amount%>
+<% end %>
+$<%= @total%>

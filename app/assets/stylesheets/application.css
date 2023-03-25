@@ -13,3 +13,230 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.intro h1 {
+  margin-top: 40vh;
+  justify-self: center;
+  font-size: 10vh;
+  font-family: 'Dancing Script', cursive;
+}
+
+.intro div {
+  width: 90vw;
+}
+
+.intro button {
+  width: 88vw;
+  height: 50px;
+  background-color: inherit;
+  border: none;
+}
+
+.login {
+  background-color: #377ec2 !important;
+}
+
+.login > * {
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.back :first-child {
+  font-size: 40px;
+  padding: 5px;
+  color: #fff;
+}
+
+.back span {
+  position: relative;
+  top: -7px;
+  left: -32px;
+  font-size: 25px !important;
+}
+
+.header {
+  padding: 0 10px;
+  background-color: #377ec2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.header > * {
+  margin-top: 15px;
+  color: #fff;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 0 0 0 20px;
+  background-color: #fff;
+}
+
+.field > * {
+  border: none;
+  background-color: inherit;
+  padding: 10px 0;
+  width: 95%;
+}
+
+.field:nth-child(n) :focus {
+  outline: none;
+}
+
+.field {
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+.field:last-child {
+  border: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.forgot {
+  margin-top: 10px;
+  align-self: center;
+}
+
+.deals {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80vh;
+  overflow: auto;
+}
+
+.deals .total {
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.deals .total span {
+  margin: 0 3vw;
+  font-weight: bold;
+}
+
+.group .card {
+  margin-top: 10px;
+}
+
+.card-body {
+  background-color: #fff;
+  margin: 0 3vw 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group .card-body {
+  border: 1px solid #377ec2;
+}
+
+.card-body img {
+  height: 50px;
+}
+
+.card-body h4 {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.card-body h5 {
+  font-weight: 600;
+}
+
+.deals .header h4,
+.new .header h4 {
+  margin-right: 30vw;
+}
+
+.deals button,
+.add-group {
+  height: 75px;
+  background-color: #5fb523;
+  border: none;
+  position: fixed;
+  top: 90vh;
+  width: 100vw;
+}
+
+.add-group > *,
+.deals button > * {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 18vw;
+}
+
+.header .actions > *,
+.sign-out {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.new .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  height: 45px;
+}
+
+.new .actions > * {
+  background-color: #5fb523;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.form-check {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .intro h1 {
+    margin-top: 20vh;
+  }
+
+  .deals .header h4,
+  .new .header h4 {
+    margin-right: 45vw;
+  }
+}

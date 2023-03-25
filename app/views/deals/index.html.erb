@@ -1,0 +1,16 @@
+<div class='deals'>
+<%= render partial: "devise/shared/header", locals: { back: groups_path, label: 'TRANSACTIONS', form: nil } %>
+<div class='total'>
+<span>Total</span><span><%= render partial: "total", locals: { deals: @deals } %></span>
+</div>
+<div class= 'card'>
+<% @deals.each do |deal| %>
+  <div class='card-body'>
+    <img src="https://i.ibb.co/344p5kB/transaction.png" alt="transaction"/>
+    <h4><%= deal.name%></h4>
+    <h5>$<%= deal.amount%></h5>
+  </div>
+<% end %>
+</div>
+<button><%= link_to 'NEW TRANSACTION', new_group_deal_path%></button>
+</div>
