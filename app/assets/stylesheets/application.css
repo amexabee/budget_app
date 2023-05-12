@@ -98,19 +98,24 @@ a {
   background-color: #fff;
 }
 
+.field {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  height: 10vh;
+}
+
 .field > * {
   border: none;
   background-color: inherit;
-  padding: 10px 0;
   width: 95%;
+  font-family: monospace;
+  padding: 5vh 0;
+  font-size: 1.2rem;
 }
 
 .field:nth-child(n) :focus {
-  outline: none;
-}
-
-.field {
-  border-bottom: 1px solid #ccc;
   outline: none;
 }
 
@@ -187,7 +192,7 @@ a {
 
 .deals button,
 .add-group {
-  height: 75px;
+  height: 10vh;
   background-color: #5fb523;
   border: none;
   position: fixed;
@@ -228,6 +233,12 @@ a {
 
 .form-check {
   margin-top: 10px;
+}
+
+.alert {
+  text-align: center;
+  color: red;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {
