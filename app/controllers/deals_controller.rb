@@ -10,22 +10,15 @@ class DealsController < ApplicationController
   end
 
   def create
+    @deal = Deal.new(deal_params)
     @group = Group.find(params[:group_id])
 
-    if group_ids_present?
-      @deal = Deal.new(deal_params.except(:group_ids))
-      if @deal.save
-        params[:deal][:group_ids].each do |id|
-          @group_deal = GroupDeal.create(group_id: id, deal_id: @deal.id)
-        end
-        redirect_to group_deals_path
-        flash.discard(:alert)
-      else
-        flash[:alert] = @deal.errors.full_messages.first if @deal.errors.any?
-        render :new, status: :unprocessable_entity
-      end
+    if @deal.save
+      @group_deal = GroupDeal.create(group_id: @group.id, deal_id: @deal.id)
+      redirect_to group_deals_path
     else
-      redirect_to new_group_deal_path, alert: 'Please select at least one group'
+      flash[:alert] = @deal.errors.full_messages.first if @deal.errors.any?
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -33,12 +26,5 @@ class DealsController < ApplicationController
 
   def deal_params
     params.require(:deal).permit(:name, :amount, :author_id)
-  end
-
-  def group_ids_present?
-    params[:deal][:group_ids].reject(&:empty?).each do |item|
-      return true if Group.find_by(id: item)
-    end
-    false
   end
 end

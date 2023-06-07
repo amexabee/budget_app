@@ -6,7 +6,9 @@
 <div class= 'card'>
 <% @deals.each do |deal| %>
   <div class='card-body'>
-    <img src="https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png" alt="transaction"/>
+    <% group = Group.find(params[:group_id]) %>
+    <% height = group.icon == "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png" ? 'height: 35px' : 'height: 50px'%>
+    <img src=<%= group.icon%> alt='categories' style="<%= height%>">
     <h4><%= deal.name%></h4>
     <h5>$<%= deal.amount%></h5>
   </div>

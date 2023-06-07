@@ -3,7 +3,7 @@
 <%= form_with(model: [@group], url: groups_path, local: true) do |form| %>
   <div class='fields'>
     <div class="field">
-      <%= form.text_field :name, placeholder: 'Name', required: true, autocomplete: 'off' %>
+      <%= form.text_field :name, placeholder: 'Category', required: true, autocomplete: 'off' %>
     </div>
     <div class="icon-field">
     <% images = [
