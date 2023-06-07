@@ -39,7 +39,9 @@ body {
   font-family: 'Dancing Script', cursive;
 }
 
-.intro div {
+.intro-btn {
+  position: fixed;
+  bottom: 0;
   width: 90vw;
 }
 
@@ -209,7 +211,7 @@ img {
   background-color: #5fb523;
   border: none;
   position: fixed;
-  top: 90vh;
+  bottom: 0;
   width: 100vw;
 }
 
