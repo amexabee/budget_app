@@ -115,6 +115,10 @@ a {
   border: none;
 }
 
+.icon-field p {
+  margin-bottom: 10px;
+}
+
 .field > * {
   border: none;
   background-color: inherit;
@@ -241,6 +245,7 @@ img {
 }
 
 .form-check {
+  display: flex;
   margin-top: 10px;
 }
 

@@ -9,19 +9,17 @@
     <% images = [
       "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png",
       "https://i.postimg.cc/QNP8gWk3/hotpopcornmovie.png",
-      "https://i.postimg.cc/PxcVChGm/35992.jpg.jpg"
+      "https://i.postimg.cc/PxcVChGm/35992.jpg.jpg",
+      "https://i.postimg.cc/dtW5xKW8/music-icon-187892.png"
     ] %>
       <p>Select your icon</p>
-      <% images.each_with_index do |image_url, index| %>
-      <% padding = index == 0 ? '20px 10px 5px' : '0 10px'%>
-      <div class="form-check" style='display: flex; padding: <%=padding%>'>
-        <%= form.radio_button :icon, image_url, required: true %>
+      <% images.each do |url| %>
+      <% padding = url == "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png" ? '20px 10px 5px' : '0 10px'%>
+      <% height = url == "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png" ? 'height: 35px;' : 'height: 50px;'%>
+      <div class="form-check" style="<%=padding%>">
+        <%= form.radio_button :icon, url, required: true %>
         <label style='margin-left: 20px;'>
-        <% if index == 0 %>
-          <img src="<%= image_url %>" alt="transaction" style="height: 35px;">
-        <% else %>
-          <img src="<%= image_url %>" alt="transaction">
-        <% end %>
+        <img src="<%= url %>" alt="transaction" style="<%= height%>">
         </label>
       </div> 
       <% end %>
