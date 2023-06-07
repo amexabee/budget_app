@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :groups, only: [:index, :new, :create] do
+  resources :groups, only: [:index, :new, :create, :destroy] do
     resources :deals, only: [:index, :new, :create]
   end
   devise_for :users, controllers: { registrations: "custom_registrations" }
