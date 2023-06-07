@@ -20,11 +20,7 @@
     </a>  
     <% end %>
   </div> 
-  <% unless @groups.empty? %>
-   <%= button_to 'Delete All Groups', group_path(@groups.first.id), method: :delete, data: { confirm: 'Are you sure you want to delete all groups?' } %>
-  <%end%>
   <button class='add-group'><%= link_to 'NEW CATEGORY', new_group_path%></button>
-
 </div>
 <%else%>
   <div class='intro'>

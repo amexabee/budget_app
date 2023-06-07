@@ -19,14 +19,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def destroy
-    GroupDeal.destroy_all
-    Group.destroy_all
-    redirect_to root_path, notice: 'All groups and their dependencies have been deleted.'
-  end
-  
-  
-
   private
 
   def group_params
