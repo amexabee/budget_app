@@ -106,6 +106,15 @@ a {
   height: 10vh;
 }
 
+.icon-field {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 20px 0 10px;
+  padding: 0;
+  border: none;
+}
+
 .field > * {
   border: none;
   background-color: inherit;
@@ -172,7 +181,7 @@ a {
   border: 1px solid #377ec2;
 }
 
-.card-body img {
+img {
   height: 50px;
 }
 

@@ -3,15 +3,33 @@
 <%= form_with(model: [@group], url: groups_path, local: true) do |form| %>
   <div class='fields'>
     <div class="field">
-      <%= form.text_field :name, placeholder: 'Name', required: true %>
+      <%= form.text_field :name, placeholder: 'Name', required: true, autocomplete: 'off' %>
     </div>
-    <div class="field">
-      <%= form.text_field :icon, placeholder: 'Icon', required: true %>
+    <div class="icon-field">
+    <% images = [
+      "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png",
+      "https://i.postimg.cc/QNP8gWk3/hotpopcornmovie.png",
+      "https://i.postimg.cc/PxcVChGm/35992.jpg.jpg"
+    ] %>
+      <p>Select your icon</p>
+      <% images.each_with_index do |image_url, index| %>
+      <% padding = index == 0 ? '20px 10px 5px' : '0 10px'%>
+      <div class="form-check" style='display: flex; padding: <%=padding%>'>
+        <%= form.radio_button :icon, image_url, required: true %>
+        <label style='margin-left: 20px;'>
+        <% if index == 0 %>
+          <img src="<%= image_url %>" alt="transaction" style="height: 35px;">
+        <% else %>
+          <img src="<%= image_url %>" alt="transaction">
+        <% end %>
+        </label>
+      </div> 
+      <% end %>
     </div>
   </div>
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <div class="actions">
-    <%= form.submit 'CREATE CATEGORY'%>
-  </div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <div class="actions">
+      <%= form.submit 'CREATE CATEGORY'%>
+    </div>
 <% end %>
 </div>

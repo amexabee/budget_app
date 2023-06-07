@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path
     else
+      flash.now[:alert] = 'Failed to create category.'
       render 'new', notice: 'not successful!'
     end
   end

@@ -8,7 +8,8 @@
     <% @groups.each do |group| %>
     <a href="<%= group_deals_url(group) %>">
       <div class='card-body'>
-        <img src='https://i.ibb.co/344p5kB/transaction.png' alt='categories'>
+        <% height = group.icon == "https://i.postimg.cc/pdDBsq3v/Vector-Joystick-PNG-Picture.png" ? 'height: 35px' : 'height: 50px'%>
+        <img src=<%= group.icon%> alt='categories' style="<%= height%>">
         <h4><%= group.name%><h4>
         <%@deals = []%>
         <%group.group_deals.each do |group_deal|%>
